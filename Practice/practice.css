@@ -1,0 +1,28 @@
+.classOne {background-color: blueviolet;}
+.classTwo {color: yellow;}
+#scored-balls{
+    height: fit-content;
+    width: 100px;
+    flex-direction: column;    
+
+}
+#scored-balls div{
+    width: 100px;
+    padding-bottom: 92%
+}
+
+.scaling-svg-container {
+    position: relative; 
+    height: 100%; 
+    width: 100%; 
+    padding: 0;
+    padding-bottom: 49%; 
+    /* override this inline for aspect ratio other than square */
+   }
+   .scaling-svg {
+    position: absolute; 
+    height: 100%; 
+    width: 213%; 
+    left: 127; 
+    top: 0;
+   }

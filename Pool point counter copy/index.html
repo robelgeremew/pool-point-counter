@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pool Points Counter</title>
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="icon" type="image/x-icon" href="./assets/1-ball.svg" />
+  </head>
+  <body>
+    <main>
+      <div id="frame-wrapper">
+        <!-- place for the name  -->
+        <div id="Title"><h1>Pool points counter</h1></div>
+        <div class="player-info">
+          <label for="player-name">Player Name:</label>
+          <input type="text" id="player-name" placeholder="Name:" />
+        </div>
+        <section>
+          <!-- to hold the foul and point part  -->
+          <form id="form">
+            <!-- the input section for the to enter the foul and point  -->
+            <!-- the points area  -->
+            <div id="point-wrapper">
+              <label id="pt-label">Points: </label>
+              <input
+                id="pt-input"
+                type="number"
+                placeholder="Enter the points "
+              />
+            </div>
+
+            <!-- the foul area  -->
+            <div id="foul-wrapper">
+              <label id="fl-label">Foul: </label>
+              <input
+                id="fl-input"
+                type="number"
+                placeholder="Enter the fouls"
+              />
+            </div>
+
+            <button id="submit">submit</button>
+          </form>
+        </section>
+        <!-- the total point section  -->
+        <!-- the scored bord section  -->
+        <!--  -->
+        <section id="area-wrapper">
+          <div id="points-area">
+            <h2>points</h2>
+            <ul></ul>
+          </div>
+          <div id="foul-area">
+            <h2>foul</h2>
+            <ul></ul>
+          </div>
+          <div id="total-area">
+            <h2>Total</h2>
+            <ul></ul>
+          </div>
+          <div id="score-balls">
+            <!-- <h2>scored-balls</h2> -->
+            <ul></ul>
+          </div>
+        </section>
+        <section>
+          <!-- place to place your history of points and fouls  -->
+          <div>
+            <!-- place for the score to look at both the foul and the points section and then make the  -->
+          </div>
+        </section>
+      </div>
+    </main>
+    <script src="./jquery-3.7.1.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

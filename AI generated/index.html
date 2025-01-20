@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pool Points Counter</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <h1>POOL POINTS COUNTER APP</h1>
+      <label for="dark-mode">Dark Mode:</label>
+      <input type="checkbox" id="dark-mode" />
+
+      <div class="player-info">
+        <label for="player-name">Player Name:</label>
+        <input type="text" id="player-name" value="SMITH" />
+      </div>
+
+      <div class="score">
+        <h2>Score: <span id="score">27</span></h2>
+      </div>
+
+      <div class="counters">
+        <div class="counter">
+          <button id="counter1-decrement">-</button>
+          <span id="counter1">10</span>
+          <button id="counter1-increment">+</button>
+        </div>
+        <div class="counter">
+          <button id="counter2-decrement">-</button>
+          <span id="counter2">10</span>
+          <button id="counter2-increment">+</button>
+        </div>
+      </div>
+
+      <div class="balls">
+        <img src="ball9.png" alt="9 ball" />
+        <img src="ball10.png" alt="10 ball" />
+        <img src="blackball.png" alt="black ball" />
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

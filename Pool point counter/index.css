@@ -1,0 +1,194 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  /* border: 14px solid #fda325; */
+  background-color: #158d39;
+}
+
+main {
+  /* color of the text is white */
+  color: white;
+}
+button#submit {
+  display: none;
+}
+::placeholder {
+  /* the texts in the place holder of the input section  */
+  color: white;
+  opacity: 1; /* Firefox */
+}
+/* not needed it looks cool like this  */
+.player-info {
+  /* position of the player name text section is absolute  */
+  /*display none to avoid unwanted redundency*/
+  display: none;
+  position: absolute;
+  top: 81px;
+  left: 2px;
+}
+/*this is not needed display is none for player name */
+label[for="player-name"] {
+  border: solid 1px red;
+  position: absolute;
+  left: 97px;
+  top: -27px;
+  width: 89px;
+}
+/*  */
+input#player-name {
+  position: absolute;
+  left: 98px;
+  background: transparent;
+  border: 1px solid #fda325;
+  color: white;
+}
+/* what is this  */
+label.pt-one {
+  display: none;
+  position: absolute;
+  left: 63px;
+  top: 65px;
+}
+
+/* what is this  */
+label.fl-one {
+  border: solid 1px #fda325;
+  position: absolute;
+  top: 0px;
+  left: -102px;
+}
+
+/* display none for the unwanted only show the total area section  */
+#input-wrapper {
+  display: grid;
+  grid: 62px / 150px 150px;
+  gap: 64px;
+}
+
+/* makes it in the middle  */
+label#pt-label,
+#fl-label {
+  margin: auto;
+}
+/*input section width takes 30% of the container 
+ */
+input#pt-input,
+#fl-input {
+  width: 30%;
+  background: transparent;
+  border: 1px solid #fda325;
+  color: white;
+}
+input#fl-input,
+#pt-input {
+  margin: auto;
+  background: transparent;
+  border: 1px solid #fda325;
+  color: white;
+}
+
+
+
+
+/*place to show the svg balls*/
+div#score-balls {
+  /* position */
+  /* height: 256px; */
+  overflow-y: scroll;
+}
+/* div#foul-wrapper {
+  display: flex;
+  flex-direction: column;
+} */
+
+#area-wrapper div {
+  border: 1px solid #fda325;
+  /* width: 21%; */
+  /* height: fit-content; */
+  /* display: flex; */
+  /* flex-direction: column; */
+}
+
+div#point-wrapper,
+#foul-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}     
+
+div#score-balls {
+  /* position: absolute;
+  top: 200px;
+  left: 125px;
+  width: 100px !important;*/
+  border: 1px solid #fda325; 
+}
+form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+section {
+  display: flex;
+  justify-content: center;
+}
+label {
+  /* display: flex; */
+  justify-content: center;
+}
+/* show only the total section */
+div#points-area,
+#foul-area {
+  display: none;
+}
+section#area-wrapper {
+  display: grid;
+  
+  grid: 140px 46px /67px;
+  gap: 17px;
+  margin: 10% auto 10%;
+}
+h2 {
+  height: fit-content;
+  margin: 1px auto;
+  overflow: hidden;
+  font-size: inherit;
+}
+h1 {
+  display: flex;
+  justify-content: center;
+}
+ul {
+  /* text-decoration: none; */
+  list-style: none;
+  padding: 2px;
+}
+#error {
+  color: rgb(255, 115, 115);
+  width: 122px;
+}
+#submit {
+  cursor: pointer;
+}
+.scaling-svg-container {
+  position: relative;
+  height: 0;
+  width: 100%;
+  padding: 0;
+  padding-bottom: 24%;
+  border: none !important;
+  padding-bottom: 100%;
+  /* override this inline for aspect ratio other than square */
+}
+.scaling-svg {
+  position: absolute;
+  height: 233%;
+  width: 414%;
+  left: 0;
+  top: 0;
+}
+#score-balls ul {
+  margin: auto;
+  width: 40%;
+}
