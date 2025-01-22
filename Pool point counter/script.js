@@ -26,13 +26,14 @@ const balls = {
 $(document).ready(function () {
   // On page load, check if a value exists in localStorage
   let storedName = localStorage.getItem("name");
-
+  //name not relevant only say welcome
   // If a value exists, set it to the input field
-  if (storedName) {
-    $("#player-name").val(storedName);
-    alert(`Welcome back, ${storedName}!`);
-  }
-
+  // takes storedName and sets it to the input field
+  // if (storedName) {
+  //   $("#player-name").val(storedName);
+  //   alert(`Welcome back, ${storedName}!`);
+  // }
+//*****I want to make the app to say welcome regardless of the name  */
   // Save the value to localStorage when the input loses focus
   $("#player-name").blur(function () {
     let nameVal = $("#player-name").val();
@@ -41,6 +42,7 @@ $(document).ready(function () {
 });
 
 // showBalls function
+// takes the value array and pushes the value to the scoredBalls array
 //1. remove the ball from the initial ball (which contains all the pool balls )
 //2. push the ball to the value array
 function showBalls(value) {
@@ -58,6 +60,7 @@ function showBalls(value) {
   }
 }
 // changes a number to svg
+// it takes the number and returns the svg
 function changeNumtoball(x) {
   let init = " ";
   if (balls[x]) {
@@ -116,6 +119,7 @@ const totalArea = $("#total-area");
 const submitBtn = $("#submit");
 
 const scoreBallsList = $("#score-balls ul");
+
 let points = [];
 let foul = [];
 
@@ -225,7 +229,9 @@ submitBtn.click((event) => {
   } else if (!ballInrange(ptInput.val())) {
     //1. if the pt value is not in range
     //2. if the pt value is clear and the foul section is not clear
-    alert("Points should be in the range of 1 to 15. and foul should be positve");
+    alert(
+      "Points should be in the range of 1 to 15. and foul should be positve"
+    );
     ptInput.val("");
     flInput.val("");
     $("#pt-label").html(`<label class='pl-one'>Points:</label>`);

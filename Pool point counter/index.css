@@ -11,7 +11,7 @@ main {
   color: white;
 }
 button#submit {
-  display: none;
+  /* display: none; */
 }
 ::placeholder {
   /* the texts in the place holder of the input section  */
