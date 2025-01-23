@@ -11,7 +11,8 @@ main {
   color: white;
 }
 button#submit {
-  /* display: none; */
+  grid-row-start: 2;
+  grid-column-start: 2;
 }
 ::placeholder {
   /* the texts in the place holder of the input section  */
@@ -62,8 +63,8 @@ label.fl-one {
 /* display none for the unwanted only show the total area section  */
 #input-wrapper {
   display: grid;
-  grid: 62px / 150px 150px;
-  gap: 64px;
+  grid: 62px 33px / 150px 150px 150px;
+  /* gap: 64px; */
 }
 
 /* makes it in the middle  */
@@ -87,9 +88,6 @@ input#fl-input,
   border: 1px solid #fda325;
   color: white;
 }
-
-
-
 
 /*place to show the svg balls*/
 div#score-balls {
@@ -115,14 +113,16 @@ div#point-wrapper,
   display: flex;
   flex-direction: column;
   margin: auto;
-}     
-
+}
+div#foul-wrapper {
+  grid-column-start:3;
+}
 div#score-balls {
   /* position: absolute;
   top: 200px;
   left: 125px;
   width: 100px !important;*/
-  border: 1px solid #fda325; 
+  border: 1px solid #fda325;
 }
 form {
   display: flex;
@@ -144,7 +144,7 @@ div#points-area,
 }
 section#area-wrapper {
   display: grid;
-  
+
   grid: 140px 46px /67px;
   gap: 17px;
   margin: 10% auto 10%;

@@ -33,7 +33,7 @@ $(document).ready(function () {
   //   $("#player-name").val(storedName);
   //   alert(`Welcome back, ${storedName}!`);
   // }
-//*****I want to make the app to say welcome regardless of the name  */
+  //*****I want to make the app to say welcome regardless of the name  */
   // Save the value to localStorage when the input loses focus
   $("#player-name").blur(function () {
     let nameVal = $("#player-name").val();
@@ -72,7 +72,7 @@ function changeNumtoball(x) {
 console.log(changeNumtoball(1)); //svg of 1
 console.log(changeNumtoball(0));
 
-//checkBall function checks if the point entered is present in the initial ball array
+//checkBall function checks if the point entered is present in the initial ball array returns a boolean true if the ball exitsts and false if it does not
 
 function checkBall(point) {
   let boolInitial = false;
@@ -83,7 +83,7 @@ function checkBall(point) {
   }
   return boolInitial;
 }
-//checkfoul function checks if the foul enterd is positive
+//checkfoul function checks if the foul enterd is positive returns a boolean true if the foul is positive and false if it is not
 function checkFoul(x) {
   let boolInitial = true;
   if (x < 0) {
@@ -91,9 +91,8 @@ function checkFoul(x) {
   }
   return boolInitial;
 }
-console.log(checkFoul()); //true
-console.log(checkFoul(-45)); //false
-//ballInrange function checks if the point entered is in the range 1-15
+
+//ballInrange function checks if the point entered is in the range 1-15 returns a boolean true if the point is in the range and false if it is not
 function ballInrange(point) {
   let initial = false;
   if (point <= 15 && point >= 1) {
@@ -101,7 +100,7 @@ function ballInrange(point) {
   }
   return initial;
 }
-//sumOfarr function returns the sum of an array
+//sumOfarr function takes an array as an argument and returns the sum of the array
 function sumOfarr(x) {
   let iValue = 0; //intial value
   for (i = 0; i < x.length; i++) {
