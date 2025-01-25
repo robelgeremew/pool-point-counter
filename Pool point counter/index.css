@@ -53,8 +53,9 @@ label.pt-one {
 }
 
 /* what is this  */
-label.fl-one {
+label.f-one {
   border: solid 1px #fda325;
+  display: none;
   position: absolute;
   top: 0px;
   left: -102px;
@@ -106,6 +107,7 @@ div#score-balls {
   /* height: fit-content; */
   /* display: flex; */
   /* flex-direction: column; */
+  /* margin: auto; */
 }
 
 div#point-wrapper,
@@ -162,7 +164,8 @@ h1 {
 ul {
   /* text-decoration: none; */
   list-style: none;
-  padding: 2px;
+  padding: 0px;
+  margin: 0px;
 }
 #error {
   color: rgb(255, 115, 115);

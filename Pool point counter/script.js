@@ -23,23 +23,6 @@ const balls = {
 };
 //persist the name
 
-$(document).ready(function () {
-  // On page load, check if a value exists in localStorage
-  let storedName = localStorage.getItem("name");
-  //name not relevant only say welcome
-  // If a value exists, set it to the input field
-  // takes storedName and sets it to the input field
-  // if (storedName) {
-  //   $("#player-name").val(storedName);
-  //   alert(`Welcome back, ${storedName}!`);
-  // }
-  //*****I want to make the app to say welcome regardless of the name  */
-  // Save the value to localStorage when the input loses focus
-  $("#player-name").blur(function () {
-    let nameVal = $("#player-name").val();
-    localStorage.setItem("name", nameVal);
-  });
-});
 
 // showBalls function
 // takes the value array and pushes the value to the scoredBalls array
@@ -108,108 +91,104 @@ function sumOfarr(x) {
   }
   return iValue;
 }
-
+// ptInput holds the point input
 const ptInput = $("#pt-input");
-
+// flInput holds the foul input
 const flInput = $("#fl-input");
-
+// totalArea holds the total area
 const totalArea = $("#total-area");
-
+// submitBtn holds the submit button
 const submitBtn = $("#submit");
-
+// scoreBallsList holds the score balls list
 const scoreBallsList = $("#score-balls ul");
 
 let points = [];
 let foul = [];
 
 submitBtn.click((event) => {
-  event.preventDefault();
-
-  console.log(checkBall(ptInput.val()));
-  console.log(Number(ptInput.val()));
-
-  //this section handles the points value
-
   let sumTemp = "";
+  //if the point value passed to the check ball function and sends true then the sumTemp variable is assigned the point value
   if (checkBall(ptInput.val())) {
     sumTemp = ptInput.val();
     // sumTemp = balls[Number(ptInput.val())];
   }
-
-  const pointsList = $("#points-area ul");
+  // pointsLists holds the points this no longer available
+  // const pointsList = $("#points-area ul");
 
   let sumPoint = sumOfarr(points);
   let sumFoul = sumOfarr(foul);
+  //foulList no longer available
   const foulList = $("#foul-area ul");
-
-  console.log(Boolean(ptInput.val()));
+  // if the
+  //1. pt value is clear
+  //2. fl value is not clear and positve
   if (!ptInput.val() && flInput.val() && checkFoul(flInput.val())) {
-    //1. if the pt value is clear
-    //2. if the fl value is not clear
-    //3. if fl value is positive
     flVal = Number(flInput.val());
     foul.push(flVal);
     sumFoul = sumOfarr(foul);
-    foulList.append(`<li>${sumFoul}</li>`);
+    // foulList.append(`<li>${sumFoul}</li>`);
     let totalVal = sumPoint - sumFoul;
 
-    $("#total-area ul").append(`<li>${totalVal}</li>`);
-
+    $("#total-area ul").html(`<li>${totalVal}</li>`);
     $("#pt-label").html(`<label class='pl-one'>Points:</label>`);
     $("#fl-label").html(`<label class = 'fl-two'>Foul:</label>`);
     flInput.val("");
+
+    // then
     // 1. append the foul section
     // 2. clears the foul input section
     // 3. go back to the orignal points and fouls label
     // 4. doing the total and appending total value to the total section
+    // 5. clear the foul section
   } else if (checkBall(ptInput.val()) && !flInput.val()) {
-    //1. if the pt value is not clear
-    //2. if ball is not in the iniital balls array
-    //3. if the fl value is clear
+    // if the
+    //1. pt value is not clear
+    //2. ball is not in the iniital balls array
+    //3. fl value is clear
+
+    // changes the value into numbers
     let val = Number(ptInput.val());
+
+    //pushes the value to the array that holds the points
     points.push(val);
+
+    //sends the points to the sumofarr function and returns the sum of the points
     sumPoint = sumOfarr(points);
-    pointsList.append(`<li>${sumPoint}</li>`);
+
+    //difference between the sum of the points and the sum of the fouls and assigns it to the total value
     let totalVal = sumPoint - sumFoul;
-    $("#total-area ul").append(`<li>${totalVal}</li>`);
+
+    $("#total-area ul").html(`<li>${totalVal}</li>`);
     $("#pt-label").html(`<label class='pl-one' >Points:</label>`);
     $("#fl-label").html(`<label class='fl-one'>Foul:</label>`);
-
     ptInput.val("");
     // 1. append the point section
     // 2. clears the point and foul input section
     // 3. doing the total and appending total value to the total section
     // 4. go back to the orignal points and fouls label
-  } else if (
-    checkBall(ptInput.val()) && // if the value is in the iniital balls array
-    ballInrange(ptInput.val()) // if the value is in range 1-15
-  ) {
+    // 5. clear the point section
+  } else if (checkBall(ptInput.val()) && ballInrange(ptInput.val())) {
     //1. if ball is in range
     //2. if ball is in iniital balls array
-
     let val = Number(ptInput.val());
     let flVal = Number(flInput.val());
-
+    //pushes the value to the array that holds the points
     points.push(val);
-
+    //pushes the value to the array that holds the fouls
     foul.push(flVal);
-
+    //sends the points to the sumofarr function and returns the sum of the points
     sumPoint = sumOfarr(points);
-
+    //sends the fouls to the sumofarr function and returns the sum of the fouls
     sumFoul = sumOfarr(foul);
-
-    pointsList.append(`<li>${sumPoint}</li>`);
-
-    foulList.append(`<li>${sumFoul}</li>`);
-
+    //difference between the sum of the points and the sum of the fouls and assigns it to the total value
     let totalVal = sumPoint - sumFoul;
-
-    $("#total-area ul").append(`<li>${totalVal}</li>`);
-
+    //appends the total value to the total section
+    $("#total-area ul").html(`<li>${totalVal}</li>`);
     $("#pt-label").html(`<label class='pl-one'>Points:</label>`);
     $("#fl-label").html(`<label class='fl-one'>Foul:</label>`);
     ptInput.val("");
     flInput.val("");
+
     // 1. append the foul section
     // 2. append the point section
     // 3. clears the point and foul input section
@@ -218,13 +197,14 @@ submitBtn.click((event) => {
   } else if (!ptInput.val() && !flInput.val()) {
     //1. if the pt value is clear
     //2. if the fl value is clear
+
     $("#pt-label").html(
       `<label class="pl-one">Points:<span id = 'error' > enter a value </span></label>`
     );
     $("#fl-label").html(
       `<label class = 'fl-one'>Foul:<span id = 'error' > enter a value </span></label>`
     );
-    //1. appends enter a value to the foul and point label section
+    //1. append the error message to the points and fouls label
   } else if (!ballInrange(ptInput.val())) {
     //1. if the pt value is not in range
     //2. if the pt value is clear and the foul section is not clear
@@ -237,10 +217,10 @@ submitBtn.click((event) => {
     $("#fl-label").html(`<label class='fl-one'>Foul:</label>`);
     //1. alert message deployed
     //2. point and foul input section cleared
-    //3. go back to the orignal points and fouls label
+    //3. go back to the orignal points and fouls labe
   } else if (!checkBall(ptInput.val()) && ballInrange(ptInput.val())) {
-    //1. if ball is not in the iniital balls array
-    //2. if ball is in range
+    //1. if the pt value is not in the initial balls array
+    //2. if the pt value is in the range
     $("#pt-label").html(
       `<label class="pl-one">Points:<span id = 'error' >ball alredy scored </span></label>`
     );
@@ -256,6 +236,7 @@ submitBtn.click((event) => {
   // this section handles the scored balls section
 
   const scoBallsEl = $("#score-balls ul");
+
   if (sumTemp) {
     //1. if the point value is present and not clear
     value.push(Number(sumTemp));
@@ -269,8 +250,8 @@ submitBtn.click((event) => {
       </li>
   `;
     }
-    console.log(listItems);
     scoBallsEl.html(listItems);
+
     //1. change the numbers inside the scored balls array
     //2. store it to another array to hold the svgs
     //3. display the svg in the scored balls array
