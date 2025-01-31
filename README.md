@@ -1,15 +1,18 @@
-# About the app   
-* you know how we used keep track of the score while we was playing pool. well the pool point counter is there for the rescue  
-* interactive app that lets user keep track of the points scored   
-# Edge cases     
-* when user writes input that is out of range (1-15) then the alert will display a message  
-* when user writes foul that is negative then the alert will display a message  
-* when user writes input that is alredy written before then error message will display (ball alredy scored)  
-* when usr writes no value and hits enter then error message will dissplay (enter a value)  
-# Technologies used  
-* javascript  
-* HTML   
-* CSS   
-# References   
-* stack overflow  
-* blogs posts    
+# About the App
+* The Pool Point Counter app helps you easily keep track of scores while playing pool. 
+* It is an interactive app that lets users track points scored.
+
+# Edge Cases
+* When the user inputs a value out of the range (1-15), an alert will display a message.
+* When the user inputs a negative value for a foul, an alert will display a message.
+* When the user inputs a value already entered (ball already scored), an error message will display.
+* When the user enters no value and hits enter, an error message will display (enter a value).
+
+# Technologies Used
+* JavaScript
+* HTML
+* CSS
+
+# References
+* Stack Overflow
+* Blog posts
