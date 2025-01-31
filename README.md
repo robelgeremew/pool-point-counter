@@ -1,14 +1,15 @@
-	• Easy to use 
-	• Write about the functionalities 
-	• Add the database thing to cath the eyes of 
-	• Name the technologies used 
-	• Reference the places that you used to find things that helped you with the work 
-	• It should show case your work your abilities , your work flow , 
-you know how we used keep track of the score while we was playing pool. well the pool point counter is there for the rescue https://pool-point-counter.onrender.com
-
-these is a simple project that i am doing to enhance my skills 
-technology used : jquery , html , css 
-
-i am looking for ways to increase the user friendliness 
-* make it responsive 
-* persisting the data
+about the app 
+	* you know how we used keep track of the score while we was playing pool. well the pool point counter is there for the rescue
+ 	* interactive app that lets user keep track of the points scored 
+edge cases 
+	 * when user writes input that is out of range (1-15) then the alert will display a message
+	 * when user writes foul that is negative then the alert will display a message
+	 * when user writes input that is alredy written before then error message will display (ball alredy scored)
+	 * when usr writes no value and hits enter then error message will dissplay (enter a value)
+technologies used
+	* javascript
+ 	* HTML 
+  	* CSS 
+references 
+	* stack overflow
+ 	* blogs about 
